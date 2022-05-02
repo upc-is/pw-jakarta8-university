@@ -33,4 +33,9 @@ public interface CrudService<T, ID> {
 	default void deleteById(ID id) throws Exception {
 		getJpaRepository().deleteById(id);
 	}
+	
+	
+	default List<T> search(String data) throws Exception {
+		return getJpaRepository().findByData(data);
+	}
 }

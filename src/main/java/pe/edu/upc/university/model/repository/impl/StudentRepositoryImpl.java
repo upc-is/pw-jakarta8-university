@@ -36,7 +36,13 @@ public class StudentRepositoryImpl implements StudentRepository {
 
 	@Override
 	public List<Student> findByLastNameAndFirstName(String lastName, String firstName) throws Exception {
-		String jpql = "SELECT student FROM Student student WHERE student.last_name = '" + lastName + "' and student.first_name = '" + firstName + "'";
+		String jpql = "SELECT student FROM Student student WHERE student.lastName = '" + lastName + "' and student.firstName = '" + firstName + "'";
+		return this.findByQuery(Student.class, jpql);
+	}
+
+	@Override
+	public List<Student> findByData(String data) throws Exception {
+		String jpql = "SELECT student FROM Student student WHERE student.lastName LIKE '%" + data + "%'";
 		return this.findByQuery(Student.class, jpql);
 	}
 

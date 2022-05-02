@@ -53,4 +53,6 @@ public interface JpaRepository<T, ID> {
 			getEntityManager().remove(optional.get());
 		}
 	}
+	
+	List<T> findByData(String data) throws Exception;
 }

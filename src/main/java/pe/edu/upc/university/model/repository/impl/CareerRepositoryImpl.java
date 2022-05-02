@@ -35,8 +35,8 @@ public class CareerRepositoryImpl implements CareerRepository {
 	}
 
 	@Override
-	public List<Career> findByName(String name) throws Exception {
-		String jpql = "SELECT career FROM Career career WHERE career.name = '" + name  + "'";
+	public List<Career> findByData(String data) throws Exception {
+		String jpql = "SELECT career FROM Career career WHERE career.name LIKE '" + data  + "'";
 		return this.findByQuery(Career.class, jpql);
 	}
 

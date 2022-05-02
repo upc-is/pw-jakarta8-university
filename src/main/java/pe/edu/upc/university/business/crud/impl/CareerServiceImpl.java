@@ -23,8 +23,4 @@ public class CareerServiceImpl implements CareerService {
 		return this.careerRepository;
 	}
 
-	@Override
-	public List<Career> findByName(String name) throws Exception {
-		return this.careerRepository.findByName(name);
-	}
 }
