@@ -20,6 +20,15 @@ public class Career {
 	@Column(name = "name", length = 100, nullable = false)
 	private String name;
 	
+	@Column(name = "facultad", length = 100, nullable = false)
+	private String facultad;
+	
+	@Column(name = "tiempo", nullable = false)
+	private int tiempo;
+	
+	@Column(name = "price", nullable = false)
+	private float price;
+	
 	@OneToMany(mappedBy = "career")
 	private List<Student> students;
 	
@@ -49,6 +58,30 @@ public class Career {
 
 	public void setStudents(List<Student> students) {
 		this.students = students;
+	}
+
+	public String getFacultad() {
+		return facultad;
+	}
+
+	public void setFacultad(String facultad) {
+		this.facultad = facultad;
+	}
+
+	public int getTiempo() {
+		return tiempo;
+	}
+
+	public void setTiempo(int tiempo) {
+		this.tiempo = tiempo;
+	}
+
+	public float getPrice() {
+		return price;
+	}
+
+	public void setPrice(float price) {
+		this.price = price;
 	}
 	
 }
